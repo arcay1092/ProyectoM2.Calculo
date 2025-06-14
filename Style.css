@@ -1,1 +1,213 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  color: #222;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+h1 {
+  text-align: center;
+
+}
+
+
+.parpado {
+      font-size: 10px;
+      color: #203154;
+     position: absolute;
+top: 105px;
+right: 80px;
+      animation-name: parpadeo;
+      animation-duration: 1s;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+      
+    }
+
+.calculadora {
+  width: 100%;
+  max-width: 500px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(45, 56, 148, 0.452);
+  border: 2px solid #B91818;
+}
+
+.botones-superiores {
+  display: flex;
+  justify-content: center;   /* Centramos los botones */
+  gap: 8px;                  /* Añadimos separación entre ellos */
+  margin-bottom: 10px;
+  
+}
+#boton-tema{
+  box-shadow:
+    0 4px 0 #888,        /* Capa 2: sombra fuerte */
+    0 6px 6px #aaa inset; /* Capa 3: sombra interna (hundido) */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+button{
+box-shadow:
+    0 4px 0 #888,        /* Capa 2: sombra fuerte */
+    0 6px 6px #aaa inset; /* Capa 3: sombra interna (hundido) */
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+.contenedor-display {
+  position: relative;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+#resultado {
+  width: 100%;
+  font-size: 1.5em;
+  padding: 10px;
+  padding-right: 60px;
+  border: 2px solid #B91818;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+#indicador-angulo {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 0.8em;
+  color: rgba(100, 100, 100, 0.5);
+  animation: parpadeo 1s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes parpadeo {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.3;
+  }
+}
+
+.contenedor-botones {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.botones-izquierda,
+.botones-derecha {
+  display: grid;
+  gap: 10px;
+}
+
+.botones-izquierda {
+  flex: 2;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.botones-derecha {
+  flex: 1;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+button {
+  padding: 9px;
+  font-size: 1em;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #d0d0d0;
+}
+
+.seccion-manual {
+  display: none;
+}
+
+.seccion-manual.active {
+  display: block;
+}
+
+.seccion-calculadora.oculta {
+  display: none;
+}
+
+body.tema-oscuro {
+  background-color: #222;
+  color: #f0f0f0;
+}
+
+body.tema-oscuro .calculadora {
+  background-color: #333;
+}
+
+body.tema-oscuro button {
+  background: #444;
+  color: #fff;
+}
+
+body.tema-oscuro button:hover {
+  background: #555;
+}
+
+body.tema-oscuro #resultado {
+  background-color: #555;
+  color: #fff;
+  border-color: #777;
+}
+
+body.tema-oscuro #indicador-angulo {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Parpadeo para el texto de error */
+@keyframes parpadeo-error {
+  0% {
+    color: #B32929;
+  }
+  50% {
+    color: transparent;
+  }
+  100% {
+    color: red;
+  }
+}
+
+#resultado.parpadeo-error {
+  animation: parpadeo-error 1s infinite;
+}
+
+
+#igual {
+  background-color: #787B84;
+  color: #117611;
+  font-weight: bold;
+ 
+  box-shadow:
+    0 2px 0 #7F9980,
+    0 4px 4px #3A543B inset,
+    0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+#igual:hover {
+  background-color: #3B484E;
+  transform: translateY(1px);
+}
 
