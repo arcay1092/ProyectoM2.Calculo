@@ -8,20 +8,26 @@
   </head>
   <body>
     <div class="seccion-calculadora calculadora">
-      <h1>Calculadora Científica</h1>
+      <h1>Calculadora Científica
+      <p class="parpado"><em>"JDYG"</em></p></h1>
+      
+    
 
-      <div class="botones-superiores">
+      <!-- Sección de botones superiores -->
+      <section class="botones-superiores">
         <button id="boton-tema" onclick="cambiarTema()">Modo oscuro</button>
         <button onclick="cambiarModoAngulo()">RAD/GRAD</button>
         <button onclick="abrirManual()">Manual</button>
-      </div>
+      </section>
 
+      <!-- Sección del display -->
       <div class="contenedor-display">
         <input type="text" id="resultado" readonly />
         <span id="indicador-angulo">RAD</span>
       </div>
 
-      <div class="contenedor-botones">
+      <!-- Sección de botones -->
+      <section class="contenedor-botones">
         <div class="botones-izquierda">
           <button onclick="agregarValor('7')">7</button>
           <button onclick="agregarValor('8')">8</button>
@@ -36,7 +42,7 @@
           <button onclick="agregarValor('1')">1</button>
           <button onclick="agregarValor('2')">2</button>
           <button onclick="agregarValor('3')">3</button>
-          <button onclick="agregarValor('*')">*</button>
+          <button onclick="agregarValor('*')">x</button>
 
           <button onclick="agregarValor('0')">0</button>
           <button onclick="agregarValor('.')">.</button>
@@ -47,8 +53,7 @@
           <button onclick="agregarValor(')')">)</button>
           <button onclick="limpiarResultado()">C</button>
           <button onclick="borrarUltimo()">DEL</button>
-
-          <button onclick="calcular()" style="grid-column: span 4">=</button>
+          <button id="igual" onclick="calcular()" style="grid-column: span 4">=</button>
         </div>
 
         <div class="botones-derecha">
@@ -64,9 +69,13 @@
           <button onclick="agregarValor('π')">π</button>
           <button onclick="agregarValor('e')">e</button>
           <button onclick="agregarValor('^')">^</button>
+          <button onclick="envolverFuncion('ln')">ln</button>
+          <button onclick="factorial()">n!</button>
         </div>
-      </div>
+      </section>
     </div>
+
+   
 
     <div class="seccion-manual calculadora">
       <h1>📘 Manual de Uso - Calculadora Científica Avanzada</h1>
@@ -74,7 +83,93 @@
         Esta calculadora te permite realizar operaciones básicas y
         científicas...
       </p>
-      <!-- Contenido del manual aquí... -->
+      <!-- Contenido del manual -->
+      <h2>📌 Funciones Básicas</h2>
+      <ul>
+        <li><b>AC 🧹:</b> Limpia toda la pantalla.</li>
+        <li><b>DEL ⌫:</b> Borra el último carácter ingresado.</li>
+        <li><b>+ − × ÷ ➕➖✖️➗:</b> Realiza operaciones aritméticas.</li>
+        <li><b>= ✅:</b> Muestra el resultado final de la operación.</li>
+      </ul>
+
+      <h2>🧮 Funciones Científicas</h2>
+      <ul>
+        <li><b>π π:</b> Inserta el valor de pi (≈ 3.1416).</li>
+        <li>
+          <b>xʸ 🔼:</b> Eleva un número a una potencia. Ej: 2 → 🔼 → 3 = 8.
+        </li>
+        <li><b>√ 🟰:</b> Calcula la raíz cuadrada. Ej: 9 → √ = √(9) → = 3.</li>
+        <li>
+          <b>% 💯:</b> Convierte un número en porcentaje. Ej: 50 → % → = 0.5.
+        </li>
+        <li>
+          <b>log 🔟:</b> Logaritmo en base 10. Ej: 100 → log = log(100) = 2.
+        </li>
+        <li>
+          <b>ln ℯ:</b> Logaritmo natural (base e). Ej: 2.718 → ln = ln(2.718) =
+          1.
+        </li>
+      </ul>
+
+      <h2>📐 Funciones Trigonométricas</h2>
+      <p>
+        🔸 **IMPORTANTE**: Siempre ingresa primero el número, luego oprime la
+        función.
+      </p>
+      <ul>
+        <li>
+          <b>sin 🟣:</b> Seno del ángulo. Ej: 30 → sin = sin(30) → = 0.5 (en
+          grados).
+        </li>
+        <li>
+          <b>cos 🔵:</b> Coseno del ángulo. Ej: 60 → cos = cos(60) → = 0.5.
+        </li>
+        <li>
+          <b>tan 🟢:</b> Tangente del ángulo. Ej: 45 → tan = tan(45) → = 1.
+        </li>
+        <li><b>asin 🔺:</b> Arco seno. Ej: 0.5 → asin = asin(0.5) → = 30.</li>
+        <li><b>acos 🔻:</b> Arco coseno. Ej: 0.5 → acos = acos(0.5) → = 60.</li>
+        <li><b>atan 🔸:</b> Arco tangente. Ej: 1 → atan = atan(1) → = 45.</li>
+        <li>
+          <b>DEG/RAD 🔁:</b> Cambia entre grados y radianes. Asegúrate de elegir
+          el modo correcto antes de usar funciones trigonométricas.
+        </li>
+      </ul>
+
+      <h2>🎨 Estilo Visual</h2>
+      <ul>
+        <li>
+          <b>🌙 / ☀️:</b> Cambia entre modo oscuro y claro para mayor comodidad
+          visual.
+        </li>
+      </ul>
+
+      <h2>💡 Ejemplos Prácticos</h2>
+      <ul>
+        <li><code>30 → sin → =</code> 🔁 en DEG → Resultado: 0.5 ✅</li>
+        <li><code>3 → √ → =</code> → Resultado: 1.732 ✅</li>
+        <li><code>100 → log → =</code> → Resultado: 2 ✅</li>
+        <li><code>2 → 🔼 → 3 → =</code> → Resultado: 8 ✅</li>
+        <li><code>25 → % → =</code> → Resultado: 0.25 ✅</li>
+      </ul>
+
+      <h2>⚠️ Recomendaciones</h2>
+      <ul>
+        <li>✔️ Asegúrate de ingresar primero el número y luego la función.</li>
+        <li>
+          ✔️ Usa correctamente los paréntesis: la calculadora los coloca
+          automáticamente.
+        </li>
+        <li>
+          ✔️ Cambia el modo DEG/RAD según lo que necesites (grados o radianes).
+        </li>
+      </ul>
+
+      <p>
+        📈 Este manual se irá actualizando conforme se agregue nuevas funciones
+        a la calculadora.
+      </p>
+
       <button onclick="cerrarManual()">Volver</button>
     </div>
 
