@@ -208,6 +208,5 @@ body.tema-oscuro #indicador-angulo {
 
 #igual:hover {
   background-color: #3B484E;
-  transform: translateY(1px)
+  transform: translateY(1px);
 }
-
