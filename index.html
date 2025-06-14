@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Calculadora Científica</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="seccion-calculadora calculadora">
+      <h1>Calculadora Científica</h1>
+
+      <div class="botones-superiores">
+        <button id="boton-tema" onclick="cambiarTema()">Modo oscuro</button>
+        <button onclick="cambiarModoAngulo()">RAD/GRAD</button>
+        <button onclick="abrirManual()">Manual</button>
+      </div>
+
+      <div class="contenedor-display">
+        <input type="text" id="resultado" readonly />
+        <span id="indicador-angulo">RAD</span>
+      </div>
+
+      <div class="contenedor-botones">
+        <div class="botones-izquierda">
+          <button onclick="agregarValor('7')">7</button>
+          <button onclick="agregarValor('8')">8</button>
+          <button onclick="agregarValor('9')">9</button>
+          <button onclick="agregarValor('+')">+</button>
+
+          <button onclick="agregarValor('4')">4</button>
+          <button onclick="agregarValor('5')">5</button>
+          <button onclick="agregarValor('6')">6</button>
+          <button onclick="agregarValor('-')">-</button>
+
+          <button onclick="agregarValor('1')">1</button>
+          <button onclick="agregarValor('2')">2</button>
+          <button onclick="agregarValor('3')">3</button>
+          <button onclick="agregarValor('*')">*</button>
+
+          <button onclick="agregarValor('0')">0</button>
+          <button onclick="agregarValor('.')">.</button>
+          <button onclick="agregarValor('%')">%</button>
+          <button onclick="agregarValor('/')">/</button>
+
+          <button onclick="agregarValor('(')">(</button>
+          <button onclick="agregarValor(')')">)</button>
+          <button onclick="limpiarResultado()">C</button>
+          <button onclick="borrarUltimo()">DEL</button>
+
+          <button onclick="calcular()" style="grid-column: span 4">=</button>
+        </div>
+
+        <div class="botones-derecha">
+          <button onclick="envolverFuncion('sin')">sin</button>
+          <button onclick="envolverFuncion('cos')">cos</button>
+          <button onclick="envolverFuncion('tan')">tan</button>
+          <button onclick="envolverFuncion('asin')">asin</button>
+          <button onclick="envolverFuncion('acos')">acos</button>
+          <button onclick="envolverFuncion('atan')">atan</button>
+          <button onclick="envolverFuncion('√')">√</button>
+          <button onclick="envolverFuncion('log')">log</button>
+          <button onclick="envolverFuncion('exp')">exp</button>
+          <button onclick="agregarValor('π')">π</button>
+          <button onclick="agregarValor('e')">e</button>
+          <button onclick="agregarValor('^')">^</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="seccion-manual calculadora">
+      <h1>📘 Manual de Uso - Calculadora Científica Avanzada</h1>
+      <p>
+        Esta calculadora te permite realizar operaciones básicas y
+        científicas...
+      </p>
+      <!-- Contenido del manual aquí... -->
+      <button onclick="cerrarManual()">Volver</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
